@@ -1,0 +1,16 @@
+POST http://localhost:3333/goals
+content-type: application/json
+
+{
+    "title": "não usar o celular de noite",
+    "desiredWeeklyFrequency": 2
+}
+###
+GET http://localhost:3333/pending-goals
+###
+POST http://localhost:3333/completions
+content-type: application/json
+
+{
+    "goalId": "qvji2igf8m9dfe4gnxm0jvhi"
+}
