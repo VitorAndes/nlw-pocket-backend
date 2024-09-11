@@ -14,3 +14,5 @@ content-type: application/json
 {
     "goalId": "qvji2igf8m9dfe4gnxm0jvhi"
 }
+###
+GET http://localhost:3333/summary
