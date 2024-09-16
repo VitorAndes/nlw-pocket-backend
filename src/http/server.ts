@@ -9,7 +9,7 @@ import { createCompletionRoute } from "./routes/create-completion";
 import { createGoalRoute } from "./routes/create-goal";
 import { getPendingGoalsRoute } from "./routes/get-pending-goals";
 import { getWeekSummaryRoute } from "./routes/get-week-summary";
-const port = 3333;
+const port = process.env.PORT || 3333;
 
 const app = fastify().withTypeProvider<ZodTypeProvider>();
 
@@ -25,10 +25,6 @@ app.register(createCompletionRoute);
 app.register(getPendingGoalsRoute);
 app.register(getWeekSummaryRoute);
 
-app
-  .listen({
-    port,
-  })
-  .then(() => {
-    console.log(`HTTP server running... ${port}`);
-  });
+app.listen(port, () => {
+  console.log(`Http server running on... ${port}`);
+});
