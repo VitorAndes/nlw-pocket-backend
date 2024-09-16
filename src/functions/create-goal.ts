@@ -10,7 +10,7 @@ export async function createGoal({
   title,
   desiredWeeklyFrequency,
 }: CreateGoalRequest) {
-  const result = await db
+  const [goal] = await db
     .insert(goals)
     .values({
       title,
@@ -18,9 +18,5 @@ export async function createGoal({
     })
     .returning();
 
-  const goal = result[0];
-
-  return {
-    goal,
-  };
+  return { goal };
 }
