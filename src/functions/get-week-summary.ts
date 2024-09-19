@@ -47,7 +47,7 @@ export async function getWeekSummary() {
                 'id', ${goalsCompletedInWeek.id},
                 'title', ${goalsCompletedInWeek.title},
                 'completedAt', ${goalsCompletedInWeek.completedAt} 
-            )
+            ) ORDER BY ${goalsCompletedInWeek.completedAt} DESC
         )
         `.as("completion"),
       })
